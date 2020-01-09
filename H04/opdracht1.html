@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ik wil gewoon toeteren</title>
+</head>
+<body>
+    <script>
+        const mycar = {
+            color : "silver",
+            brand : "mazda",
+            speed : 0,
+
+            speedup: function () {
+                this.speed += 5;
+                console.log(this.speed)
+            },
+            toeteren: function () {
+                console.log("BLYAT!")
+            }
+        }
+        console.log(mycar.color);
+        (mycar.speedup());
+        (mycar.toeteren());
+    </script>
+</body>
+</html>

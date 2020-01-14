@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose your operator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        div.operatorpicture {
+            box-sizing: border-box;
+            height: 450px;
+            width: 300px;
+            float: left;
+            background-color: red;
+            border:solid 1px black;
+        }
+
+        div.favorite {
+            width: 300px;
+            height: 150px;
+            background-color: purple;
+            background-image: none;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #pics {
+            width: 900px;
+            height: 1300px;
+            border: solid 1px black;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operatorpicker</h1>
+    <h3>Pick your favorite operator</h3>
+    <div id="pics">
+
+    </div>
+</body>
+<script>
+        const pics = document.getElementById("pics");
+        createpictureHolder();
+        createOperatorImage();
+        function createpictureHolder() {
+            for (let i = 0; i < 9; i++){
+                pictureHolder= document.createElement("div");
+                pictureHolder.className = "operatorpicture";
+                pictureHolder.id = "picture-holder" + i;
+                pics.appendChild(pictureHolder);
+        }
+    }
+    function createOperatorImage() {
+        pictureHolder = document.getElementsByClassName("operatorpicture");
+        for (let i = 0; i < pictureHolder.length; i++){
+            favorite = document.createElement("div");
+            favorite.className = "favorite";
+            favorite.id = "favorite_" + i;
+            operatorpicture = document.createElement("img");
+            operatorpicture.src = "img/icon" + i + ".png";
+            operatorpicture.id = i;
+            operatorpicture.addEventListener("click", function () {
+                selectFav(this.id);
+            });
+            pictureHolder[i].appendChild(favorite);
+            pictureHolder[i].appendChild(operatorpicture);
+        }
+    }
+    
+    function selectFav(id) {
+            console.log("cyka is operator " + id);
+            notFav = document.getElementsByClassName("favorite");
+
+            for (let i = 0; i < notFav.length; i++) {
+                notFav[i].style.backgroundImage = "none";
+            }
+
+            favorite = document.getElementById("favorite_" + id);
+            favorite.style.backgroundImage ="url('img/hart.png')";
+    }
+    //const pics = document.getElementById("pics");
+    //nieuwElement= document.createElement("div");
+    //nieuwElement.className = "operatorpicture";
+    //pics.appendChild(nieuwElement);
+</script>
+</html>

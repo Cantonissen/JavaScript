@@ -10,3 +10,4 @@ var mycar = {
 }
 
 console.log(mycar.color);
+document.getElementById( "kop").innerHTML = mycar.color;

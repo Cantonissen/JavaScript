@@ -1,0 +1,14 @@
+*{
+    font-family: "Arial", "sans-serif";
+    text-align: center;
+}
+nav{
+    background-color: black;
+}
+nav a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-right: 2px solid white;
+    padding-right: 5px;
+}
